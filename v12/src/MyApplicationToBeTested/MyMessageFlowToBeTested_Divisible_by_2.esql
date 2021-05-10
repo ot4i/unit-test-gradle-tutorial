@@ -1,0 +1,14 @@
+
+
+CREATE FILTER MODULE MyMessageFlowToBeTested_Divisible_by_2
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN		
+		IF MOD(CAST(Root.JSON.Data.Input AS INTEGER), 2) = 0 THEN 
+			-- Input exactly divisible by 2
+			RETURN TRUE;
+		ELSE
+			-- Input NOT exactly divisible by 2
+			RETURN FALSE;
+		END IF;		
+	END;
+END MODULE;

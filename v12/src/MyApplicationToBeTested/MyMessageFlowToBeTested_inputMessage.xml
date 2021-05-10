@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MessagePool xmlns="http://wwww.ibm.com/iib/test/1.0.0">
+    <InputMessage timestamp="1620509986048" nodeId="FCMComposite_1_1" name="Input10" id="1620509986048-1137">
+        <plainText>%7B%22Input%22%3A%2210%22%7D</plainText>
+    </InputMessage>
+    <InputMessage timestamp="1620509758325" nodeId="FCMComposite_1_1" name="Input01" id="1620509758325-578">
+        <plainText>%7B%22Input%22%3A%221%22%7D</plainText>
+    </InputMessage>
+    <InputMessage timestamp="1620509812981" nodeId="FCMComposite_1_1" name="Input02" id="1620509812981-605">
+        <plainText>%7B%22Input%22%3A%222%22%7D</plainText>
+    </InputMessage>
+    <InputMessage timestamp="1620509890716" nodeId="FCMComposite_1_1" name="Input03" id="1620509890716-738">
+        <plainText>%7B%22Input%22%3A%223%22%7D</plainText>
+    </InputMessage>
+    <InputMessage timestamp="1620509903866" nodeId="FCMComposite_1_1" name="Input04" id="1620509903866-777">
+        <plainText>%7B%22Input%22%3A%224%22%7D</plainText>
+    </InputMessage>
+    <InputMessage timestamp="1620509918053" nodeId="FCMComposite_1_1" name="Input05" id="1620509918053-822">
+        <plainText>%7B%22Input%22%3A%225%22%7D</plainText>
+    </InputMessage>
+    <InputMessage timestamp="1620509930963" nodeId="FCMComposite_1_1" name="Input06" id="1620509930963-873">
+        <plainText>%7B%22Input%22%3A%226%22%7D</plainText>
+    </InputMessage>
+    <InputMessage timestamp="1620509948414" nodeId="FCMComposite_1_1" name="Input07" id="1620509948414-930">
+        <plainText>%7B%22Input%22%3A%227%22%7D</plainText>
+    </InputMessage>
+    <InputMessage timestamp="1620509960231" nodeId="FCMComposite_1_1" name="Input08" id="1620509960231-993">
+        <plainText>%7B%22Input%22%3A%228%22%7D</plainText>
+    </InputMessage>
+    <InputMessage timestamp="1620509973140" nodeId="FCMComposite_1_1" name="Input09" id="1620509973140-1062">
+        <plainText>%7B%22Input%22%3A%229%22%7D</plainText>
+    </InputMessage>
+    <InputMessage timestamp="1620510817490" nodeId="FCMComposite_1_1" name="Input11" id="1620510817490-2614">
+        <plainText>%7B%22Input%22%3A%22bad+input%22%7D</plainText>
+    </InputMessage>
+</MessagePool>

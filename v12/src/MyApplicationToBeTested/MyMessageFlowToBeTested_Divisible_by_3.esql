@@ -1,0 +1,15 @@
+
+
+CREATE FILTER MODULE MyMessageFlowToBeTested_Divisible_by_3
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN		
+		IF MOD(CAST(Root.JSON.Data.Input AS INTEGER), 3) = 0 THEN
+			-- Input exactly divisible by 3
+			RETURN TRUE;
+		ELSE
+			-- Input NOT exactly divisible by 3
+			RETURN FALSE;
+		END IF;		
+	END;
+END MODULE;
+

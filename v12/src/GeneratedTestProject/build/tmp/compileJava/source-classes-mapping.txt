@@ -1,0 +1,2 @@
+com/ibm/dev/MyTests.java
+ com.ibm.dev.MyTests
