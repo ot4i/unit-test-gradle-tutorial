@@ -217,7 +217,7 @@
                                   }                            
                         },			
 						{
-			    			"section": "This tutorial has shown how to record messages passing through the runtime, and use them to automate the generation of large volumes of unit tests."
+			    			"section": "This tutorial has shown how to build and execute IBM App Connect Enterprise unit tests outside the Toolkit development environment."
 						}
                     ]
                 },
