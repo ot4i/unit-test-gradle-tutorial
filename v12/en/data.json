@@ -1,0 +1,225 @@
+{
+    "version": "0.1",
+    "pageContent": 
+	{
+        "_comments": "object that contains data for page labels, buttons, etc.",
+        "navItems": 
+		{
+            "_common": 
+			{
+                "buttonBackToGallery": 
+				{
+                    "name": "Back To Gallery",
+					"method": "backToGallery()",
+					"idName": "backToGallery"	
+                },
+                "buttonStartTutorial": 
+				{
+                    "name": "Start Tutorial",
+					"method": "startTutorialFromDetailsScreen()",
+					"idName": "startTutorial"
+                },
+				"buttonViewDetails": 
+				{
+                    "name": "View Details",
+					"method": "viewDetails()",
+					"idName": "stepsViewDetails"	
+                }
+            }
+        }
+    },
+    "tutorial": 
+	{
+        "_common": 
+		{
+            "name": "Unit Testing - Building and executing unit tests outside the Toolkit",			
+            "shortDescription": "Learn how to build and execute IBM App Connect Enterprise unit tests outside the Toolkit development environment.",
+            "durationText": "This tutorial takes approximately",
+            "durationTime": "10 minutes",
+            "_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
+            "resourceToOpen": "ExampleRouterFlow",
+            "helpLink": 
+			{
+                "text": "IBM Knowledge Center",
+           		"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.ace.home.doc/help_home.htm"
+            }
+        },
+        "pageDetails": 
+		{
+            "topicsName": "Tutorial topics",
+            "_topicListComment": "A short list of product concepts or tasks demonstrated by this tutorial",
+            "topicList": 
+			[
+                {
+                    "title": "Java Unit Testing"
+                },
+                {
+                    "title": "Command: ibmint generate tests"
+                }				
+            ],
+            "outcomesName": "Learning outcomes",
+            "_outcomesComment": "A description of what the user will have learned or accomplished by running this tutorial.",
+            "outcomeList": 
+			[
+                {
+                    "title": "As part of an automated process, use IBM App Connect Enterprise to record message assembly files which represent the in-memory logical tree used as messages travel through a deployed message flow."
+                },
+				{
+                    "title": "Execute the ibmint generate tests command to use the recorded messages for the automated construction of Java unit tests."
+                }
+            ],
+            "summary": 
+			{
+                "overviewName": "Overview",
+                "_overviewComment": "A short description of what happens in this tutorial, and an optional short explanation of the ACE concepts used in this tutorial if necessary for context. What background knowledge must the user have for this to make sense?",
+                "sections": 
+				[
+					 {
+                        "section": "This tutorial assumes you have already written a message flow and have some unit tests which you would like to run. Other tutorials in the gallery provide details for how to create unit tests manually or automatically generate them for existing message flows, so if you don't already know how to do this it is recommended to complete one of those tutorials first and then return to this scenario. This tutorial provides a simple message flow in an application, and a corresponding set of tests. In this example, the tests were generated using the <code>ibmint generate tests</code> command, but the method dscribed in this tutorial could also be applied to tests that you have authored using the Toolkit's features."
+					 },
+					 {
+                        "section": "The tutorial provides the message flow already constructed, recorded message assembly files and some associated unit tests in a Test Project.  We will import these projects into the Toolkit, but then switch to a command console session to demonstrate how to build and execute the tests outside the Toolkit."					
+					 }
+                ]
+            },
+			"helpLinks": 
+			{
+				"_helpLinksComment": "Helplinks that have a type:web attribute are rendered as web links. Otherwise, links are assumed to be to embedded Help topics in the Knowledge Center.",
+				"title": "Find out more",
+				"details": 
+				[
+					{
+						"title": "Knowledge Center link to ",
+						"description": "Developing unit tests using Test Projects",
+						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+						"type": "web"
+					},
+					{					
+						"title": "Knowledge Center link to ",
+						"description": "Developing unit tests using the command: ibmint generate tests",
+						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+						"type": "web"
+					}
+				]
+			}
+        },
+        "pageSteps": 
+		{
+            "create": 
+			{
+                "overview": 
+				{
+                    "name": "Create",
+                    "heading": "Import a project",
+                    "_createComment": "A description of what will happen when the user clicks Import.",
+                    "sections": 
+					[
+                        {
+                            "section": "Click <span class='uicontrol'>Import</span> and the application named <span class='application'>MyApplicationToBeTested</span>, and the test project named <span class='application'>GeneratedTestProject</span> will be added to your workspace."
+						},
+						{
+							"section": "<span class='application'>MyApplicationToBeTested</span> provides a single message flow named <span class='resource'>MyMessageFlowToBeTested</span> which receives data over HTTP. The project also provides 10 sample input messages. These inputs have also been used to generate a set of unit tests which reside in the Test project named <span class='application'>GeneratedTestProject</span>."													
+						},
+						{
+							"section": "The HTTPInput node is configured to expect a JSON message which carries a single field containing a number. There follows a series of Filter nodes and graphical mapping nodes in the flow which test the input to see whether it is exactly divisible by 3 and exactly divisible by 2. The results drive the message down alternate branches of the flow all of which ultimately pass in to an HTTPReply node at the end of the flow which responds back to the requestor."							
+						},
+						{
+							"section":"Now move to the Prepare section where we will leave the Toolkit and use a command console session to build the tests, which will then be executed in the Run section of the tutorial."
+						}
+					 ]
+				 },
+                "helpLinks": 
+				{
+                    "title": "Find out more",
+                    "details": 
+					[
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Developing integration solutions by using applications",
+                            "link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+							"type": "web"
+                        }
+                    ]
+                },
+                "actions": 
+				{
+                    "title": "Create Actions",
+                    "details": 
+					[
+                        {
+                            "name": "Import",
+                            "method": "importArtifacts()"
+                        }
+                    ]
+                }
+            },
+            "prepare": 
+			{
+                "overview": 
+				{
+                    "name": "Prepare",
+                    "heading": "",
+                    "_prepareComment": "A description of what just happened when the user clicked Import, and what will happen when the user clicks Deploy.",
+                    "sections": 
+		     [				 
+				  {
+                "section":"<b>Build the provided unit tests into a jar file from a command line</b>",
+                "steps":{
+                  "type":"ordered",
+                  "details":[
+                    {						
+                      "details": "Launch a command console session, and change directory to the location of the Test project named <span class='application'>GeneratedTestProject</span> in your Toolkit workspace (in the example below this is C:\\MyToolkitWorkspace\\GeneratedTestProject). This Test project, which was imported in the Create stage of the tutorial, contains a file <code>build.gradle</code> and a file <code>settings.gradle</code> which can be used by the Gradle build tool in order to build a jar file containing the JUnit tests. This tutorial assumes you already have gradle installed (if not, you can do this very easily, starting from https://gradle.org/install/). Next, build the tests using the gradle command. The code shown below demonstrates these steps:<br><code>C:\Program Files\IBM\ACE\12.0.1.0>cd C:\\MyToolkitWorkspace\\GeneratedTestProject<br><br>C:\\MyToolkitWorkspace\\GeneratedTestProject>C:\\gradle-7.0\\bin\\gradle<br><br>BUILD SUCCESSFUL in 9s<br>3 actionable tasks: 3 executed<br><br>C:\\MyToolkitWorkspace\\GeneratedTestProject\\GeneratedTestProject>dir<br> Volume in drive C is Windows<br> Volume Serial Number is 0483-269F<br><br> Directory of C:\\MyToolkitWorkspace\\GeneratedTestProject<br><br>09/05/2021  21:57    <DIR>          .<br>09/05/2021  21:57    <DIR>          ..<br>08/05/2021  22:57               412 .classpath<br>09/05/2021  21:57    <DIR>          .gradle<br>08/05/2021  22:58             3,308 .project<br>08/05/2021  22:58    <DIR>          bin<br>09/05/2021  21:57    <DIR>          build<br>08/05/2021  22:55               979 build.gradle<br>09/05/2021  21:57             7,984 GeneratedTestProject.jar<br>09/05/2021  21:57    <DIR>          resources<br>08/05/2021  22:55                41 settings.gradle<br>08/05/2021  22:57    <DIR>          src<br>08/05/2021  22:55               349 testproject.descriptor<br>               6 File(s)         13,073 bytes<br>               7 Dir(s)   4,965,658,624 bytes free<br></code><br>As shown in the directory listing which completes the passage of code above, once the gradle build has completed, you should see that a new jar file named <b>GeneratedTestProject.jar</b> has been built."						
+					},
+					{
+						"details": "The tests are now ready to be executed. Now move to the Run section of the tutorial, where we will use an integration server to execute the built tests."						
+                    }
+				  ]
+				}
+				  }
+             ]
+                },
+                "helpLinks": 
+				{
+                }
+            },
+            "run": 
+			{
+                "overview": 
+				{
+                    "name": "Run",
+                    "heading": "",
+                    "_runComment": "The full steps for the user to run through the tutorial. Use 'sections' to render paragraphs, 'steps' with a type of 'ordered' or 'unordered' to render HTML lists, and 'substeps' to render nested lists.",
+                "sections":[                            
+                            {
+                                "section": "<h4>Execute the Unit Tests",
+                                "steps": {
+                                    "type": "ordered",
+                                    "details": [                                      
+                                    	{
+                                        "details": "Staying in the command console session which was used to build the tests, we will now prepare a working directory which will be used by an integration server to execute the tests. <br><code>C:\\MyToolkitWorkspace\\GeneratedTestProject\\GeneratedTestProject>mqsicreateworkdir C:\\temp\\MyUnitTestServerWorkingDirectory<br><br>mqsicreateworkdir: Copying sample server.config.yaml to work directory<br>        1 file(s) copied.<br>Successful command completion.<br><br>C:\\MyToolkitWorkspace\\GeneratedTestProject\\GeneratedTestProject>copy C:\\MyToolkitWorkspace\\MyApplicationToBeTested\\MyDeploy.bar C:\\temp\\MyUnitTestServerWorkingDirectory\\run<br><br>C:\\MyToolkitWorkspace\\GeneratedTestProject\\GeneratedTestProject>IntegrationServer –work-dir C:\\temp\\MyUnitTestServerWorkingDirectory --test-project GeneratedTestProject --start-applications false<br></code>"
+                                        }
+                                      ]
+                                  }                            
+                        },			
+						{
+			    			"section": "This tutorial has shown how to record messages passing through the runtime, and use them to automate the generation of large volumes of unit tests."
+						}
+                    ]
+                },
+                "helpLinks": 
+				{
+                    "title": "Find out more",
+                    "details": 
+					[                        
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Unit Testing your message flow",
+                            "link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/rt26110_.htm",
+							"type": "web"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
